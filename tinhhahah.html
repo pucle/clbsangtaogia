@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLB Sáng Tạo - Landing Page</title>
+
+  <!-- CSS đã được chèn trực tiếp vào HTML -->
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background: #f6f7fb;
+      color: #1f2937;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      background: #111827;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+
+    .brand-title { margin: 0; }
+
+    .brand-sub {
+      margin: 0;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .header-cta {
+      text-decoration: none;
+      padding: 10px 14px;
+      border: 1px solid #111827;
+      border-radius: 12px;
+      color: #111827;
+    }
+
+    /* Nav */
+    .site-nav {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-inner {
+      display: flex;
+      gap: 16px;
+      padding: 12px 0;
+    }
+
+    .nav-inner a {
+      text-decoration: none;
+      color: #374151;
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+
+    .nav-inner a:hover { background: #f3f4f6; }
+
+    /* Hero */
+    .hero { padding: 28px 0; }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+
+    .hero-text {
+      background: #ffffff;
+      padding: 18px;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+    }
+
+    .hero-text h2 { margin: 0 0 10px 0; }
+    .hero-text p { margin: 0 0 14px 0; color: #4b5563; }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border: 1px solid #111827;
+      border-radius: 12px;
+      color: #111827;
+      text-decoration: none;
+      margin-top: 6px;
+    }
+
+    .btn-solid {
+      background: #111827;
+      color: #ffffff;
+    }
+
+    .hero-image {
+      background: #111827;
+      color: #ffffff;
+      padding: 18px;
+      border-radius: 18px;
+    }
+
+    .hero-image-badge {
+      background: #ffffff;
+      color: #111827;
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: bold;
+    }
+
+    .hero-image-card {
+      background: #ffffff;
+      color: #111827;
+      padding: 14px;
+      margin-top: 14px;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .mini-title { margin: 0 0 6px 0; font-weight: bold; }
+    .mini-text { margin: 0; }
+
+    /* Features */
+    .features { padding-bottom: 28px; }
+    .section-title { margin: 0 0 14px 0; }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border: 1px solid #111827;
+      border-radius: 999px;
+      font-size: 12px;
+    }
+
+    /* About */
+    .about { padding-bottom: 28px; }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .about-text, .about-panel {
+      background: #ffffff;
+      padding: 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+    }
+
+    .bullets { margin: 10px 0 0 18px; }
+
+    .demo-box {
+      margin-top: 10px;
+      padding: 14px;
+      border: 3px dashed #9ca3af;
+      border-radius: 16px;
+      background: #f9fafb;
+    }
+
+    .demo-title { margin: 0 0 6px 0; font-weight: bold; }
+    .demo-text { margin: 0; color: #4b5563; }
+
+    /* Join */
+    .join { padding-bottom: 28px; }
+
+    .join-inner {
+      background: #ffffff;
+      padding: 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .form {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 10px;
+    }
+
+    .input {
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #111827;
+      color: #ffffff;
+      padding: 18px 0;
+    }
+
+    .footer-inner p { margin: 0; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-inner,
+      .card-grid,
+      .about-inner,
+      .join-inner,
+      .form {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">CF</div>
+        <div>
+          <h1 class="brand-title">CLB Sáng Tạo</h1>
+          <p class="brand-sub">Thiết kế • Code • Trình bày</p>
+        </div>
+      </div>
+      <a class="header-cta" href="#join">Tham gia</a>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="#hero">Trang chủ</a>
+      <a href="#features">Hoạt động</a>
+      <a href="#about">Giới thiệu</a>
+      <a href="#join">Liên hệ</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Biến ý tưởng thành bố cục “xịn” với Box Model</h2>
+          <p>
+            Trang web được chia thành nhiều khối nội dung rõ ràng để minh hoạ
+            mô hình hộp trong CSS.
+          </p>
+          <a class="btn" href="#features">Xem hoạt động</a>
+        </div>
+
+        <div class="hero-image">
+          <div class="hero-image-badge">5+ BOX</div>
+          <div class="hero-image-card">
+            <p class="mini-title">Mini Card</p>
+            <p class="mini-text">
+              Padding tạo đệm, border tạo khung, margin tạo khoảng cách.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="container">
+        <h3 class="section-title">Hoạt động nổi bật</h3>
+        <div class="card-grid">
+          <article class="card">
+            <h4>Thiết kế bố cục</h4>
+            <p>Thực hành Flexbox và Grid để chia layout.</p>
+            <span class="tag">Layout</span>
+          </article>
+
+          <article class="card">
+            <h4>Box Model</h4>
+            <p>Hiểu rõ content, padding, border và margin.</p>
+            <span class="tag">Box</span>
+          </article>
+
+          <article class="card">
+            <h4>Thẩm mỹ</h4>
+            <p>Chọn màu sắc, font chữ và khoảng cách hợp lý.</p>
+            <span class="tag">UI</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container about-inner">
+        <div class="about-text">
+          <h3 class="section-title">Giới thiệu Box Model</h3>
+          <ul class="bullets">
+            <li>Margin: khoảng cách giữa các box</li>
+            <li>Padding: khoảng cách giữa nội dung và viền</li>
+            <li>Border: đường viền bao quanh box</li>
+          </ul>
+        </div>
+
+        <div class="about-panel">
+          <p class="panel-title"><strong>Demo Box Model</strong></p>
+          <div class="demo-box">
+            <p class="demo-title">Demo Box</p>
+            <p class="demo-text">
+              Đây là box minh hoạ có margin, padding và border.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="join">
+      <div class="container join-inner">
+        <div>
+          <h3 class="section-title">Đăng ký tham gia</h3>
+          <p>Nhập thông tin để nhận thông báo từ CLB.</p>
+        </div>
+        <form class="form">
+          <input class="input" type="text" placeholder="Họ tên" />
+          <input class="input" type="email" placeholder="Email" />
+          <button class="btn btn-solid" type="button">Gửi</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 CLB Sáng Tạo</p>
+      <p>Bài tập: Thiết kế bố cục & Box Model</p>
+    </div>
+  </footer>
+</body>
+</html>
